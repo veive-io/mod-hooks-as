@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package modhooks;
+
+import "koinos/options.proto";
+
+message on_install_args {
+    bytes data = 1;
+}
+
+message on_uninstall_args {
+    bytes data = 1;
+}
+
+message is_type_args {
+    uint32 type_id = 1;
+}
+
+message is_type_result {
+    bool value = 1;
+}
+
+message scope {
+    uint32 entry_point = 1;
+    bytes contract_id =2  [(koinos.btype) = ADDRESS];
+}
+
+message manifest {
+    string name = 1;
+    uint32 type_id = 2;
+    string version = 3;
+    string description = 4;
+    repeated scope scopes = 5;
+}
+
+message call_operation {
+    bytes contract_id = 1 [(koinos.btype) = ADDRESS];
+    uint32 entry_point = 2;
+    bytes args = 3;
+}
+
+message pre_check_args {
+    bytes sender = 1 [(koinos.btype) = ADDRESS];
+    call_operation operation = 2;
+}
+
+message pre_check_result {
+    bytes value = 1;
+}
+
+message post_check_args {
+    bytes data = 1;
+}

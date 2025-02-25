@@ -1,0 +1,1 @@
+export const MODULE_HOOKS_TYPE_ID = 4;

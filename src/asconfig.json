@@ -1,0 +1,26 @@
+{
+  "targets": {
+    "debug": {
+      "outFile": "../build/debug/ModHooks.wasm",
+      "textFile": "../build/debug/ModHooks.wat",
+      "sourceMap": true,
+      "debug": true
+    },
+    "release": {
+      "outFile": "../build/release/ModHooks.wasm",
+      "textFile": "../build/release/ModHooks.wat",
+      "sourceMap": true,
+      "optimizeLevel": 3,
+      "shrinkLevel": 0,
+      "converge": false,
+      "noAssert": false
+    }
+  },
+  "options": {
+    "exportStart": "_start",
+    "disable": ["sign-extension", "bulk-memory"],
+    "disableWarning": "235",
+    "lib": [],
+    "use": ["abort="]
+  }
+}
