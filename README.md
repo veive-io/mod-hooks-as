@@ -6,6 +6,18 @@
 
 Full documentation: https://docs.veive.io/veive-docs/framework/module-types/hooks-modules
 
+### **Usage and Integration**
+
+#### **Integration in the Veive Protocol**
+
+The `mod-hooks-as` library integrates seamlessly with the Veive protocol, enabling smart accounts to execute pre-checks and post-checks as part of the operation lifecycle.
+
+**Flow Integration:**
+- The `ModHooks` methods `pre_check` and `post_check` are called at the appropriate times during an operation's lifecycle. This integration ensures that all necessary checks and actions are performed before and after operations, enhancing security and operational integrity.
+
+**Development and Customization:**
+- Developers can extend the `ModHooks` class to create custom hook modules that perform specific tasks, such as additional validation checks, logging, or state updates. This flexibility allows for a wide range of use cases and customizations, depending on the needs of the smart account and its operations.
+
 ### **Usage**
 
 #### **Installation**
